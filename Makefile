@@ -7,4 +7,4 @@ ising: ranlxs.o
 	$(CXX) $(CXXFLAGS) $(SRCS) -o exec
 
 clean:
-	rm *.o *~ exec
+	rm *.o exec
