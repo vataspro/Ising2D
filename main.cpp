@@ -42,8 +42,13 @@ int main(int argc, char* argv[]) {
         double magnetisation = ising.getMagnetisation();
         double energy = ising.computeEnergy();
 
+        int m = ising.getTotalMagnetisation();
+        int S = ising.getTotalS();
+
         std::cout << std::fixed << std::setprecision(15) << energy 
-                  << " " <<  magnetisation << std::endl;
+                  << " " <<  magnetisation 
+                  << " " << m 
+                  << " " << S << std::endl;
     }
     return 0;
 }
