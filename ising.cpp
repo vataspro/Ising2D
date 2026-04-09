@@ -28,7 +28,7 @@ void Ising2D::sweep() {
 
         for (int i=0; i<N; i++) {
             for (int j=0; j<N; j++) {
-                double energy = lattice[i][j] * 
+                double energy =  b * lattice[i][j] * 
                                     ( lattice[i][(j+1)%N]     +
                                         lattice[i][(N+j-1)%N] +
                                         lattice[(i+1)%N][j]   +
@@ -36,7 +36,7 @@ void Ising2D::sweep() {
 
                 energy += H * lattice[i][j];
 
-                if ((energy <= 0) || (ranlxs_rand() < exp(-2. * b  * energy)))
+                if ((energy <= 0) || (ranlxs_rand() < exp(-2. * energy)))
                     lattice[i][j] *= -1;
             }
         }
