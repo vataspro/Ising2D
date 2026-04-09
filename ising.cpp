@@ -113,6 +113,7 @@ int Ising2D::computeEnergy() const {
             int down = lattice[(i + 1) % Lx][j];
 
             energy -= s * (right + down);
+            energy -= s * H;
         }
     }
 
