@@ -43,6 +43,10 @@ class Ising2D {
     // Get the average square magnetisation <m^2>
     double getMagnetisationSquared() const;
 
+    // Get total m and S (for reweighting purposes)
+    int getTotalMagnetisation();
+    int getTotalS();
+
     // Compute the energy
     int computeEnergy() const;
 

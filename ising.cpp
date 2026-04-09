@@ -43,6 +43,36 @@ void Ising2D::sweep() {
     }
 }
 
+// Get the total magnetisation
+int Ising2D::getTotalMagnetisation() {
+
+    int m = 0;
+    for (int i=0; i<N; i++) {
+        for (int j=0; j<N; j++) {
+            m += lattice[i][j];
+        }
+    }
+    return m;
+}
+
+// Get S
+int Ising2D::getTotalS() {
+
+    int S = 0;
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            int s = lattice[i][j];
+            // Periodic boundary conditions
+            int right = lattice[i][(j + 1) % N];
+            int down = lattice[(i + 1) % N][j];
+
+            S += s * (right + down);
+        }
+    }
+
+    return S;
+}
+
 
 double Ising2D::getMagnetisation() const {
 
